@@ -11,6 +11,6 @@ export class AppComponent {
     if (!value.trim()) {
       return;
     }
-    console.log(value);
+
   }
 }
