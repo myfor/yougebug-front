@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'yougebug-front';
+
+  search(value: string) {
+    if (!value.trim()) {
+      return;
+    }
+    console.log(value);
+  }
 }

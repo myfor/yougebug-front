@@ -5,7 +5,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NgZorroAntdModule, NZ_I18N, zh_CN } from 'ng-zorro-antd';
+import { NZ_I18N, zh_CN } from 'ng-zorro-antd';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
@@ -20,7 +20,6 @@ registerLocaleData(zh);
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgZorroAntdModule,
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule
