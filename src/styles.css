@@ -9,6 +9,11 @@ body {
   background-size: auto;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
 .container {
   max-width: 1264px;
   width: 100%;
