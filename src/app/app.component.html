@@ -1,22 +1,38 @@
-<div>
-  <header class="header-top top-bar">
-    <div class="bar mx-auto h100 w100">
-      <div class="logo">
-        <a [routerLink]="['/']">
-          <img src="assets/img/有个bug.png" alt="LOGO">
+<header class="header-top top-bar">
+  <div class="bar mx-auto h100 w100">
+    <div class="logo">
+      <a class="-md" [routerLink]="['/']">
+        <img src="assets/img/有个bug.png" alt="LOGO" height="35px">
+      </a>
+      <a class="-sm" [routerLink]="['/']">
+        <img src="assets/img/B.png" alt="LOGO" height="35px">
+      </a>
+    </div>
+    <div class="search-box h100" (keyup.enter)="search(searchbox.value)">
+      <nz-input-group [nzPrefix]="prefixIconSearch">
+        <input type="search" #searchbox nz-input title="按回车搜索" placeholder="按回车搜索...">
+      </nz-input-group>
+      <ng-template #prefixIconSearch><i nz-icon nzType="search"></i></ng-template>
+    </div>
+    <div class="actions">
+      <div class="of-x-hidd" *ngIf="!isLogged">
+        <a nz-button nzType="primary">登录</a>
+        &nbsp;
+        <a nz-button nzType="default">注册</a>
+      </div>
+      <div class="of-x-hidd" *ngIf="isLogged">
+        <a href="javascript:;">
+          <img src="assets/img/B.png" alt="头像" height="35px">
         </a>
       </div>
-      <div class="search-box h100" (keyup.enter)="search(searchbox.value)">
-        <nz-input-group [nzPrefix]="prefixIconSearch">
-          <input type="search" #searchbox nz-input title="按回车搜索" placeholder="按回车搜索...">
-        </nz-input-group>
-        <ng-template #prefixIconSearch><i nz-icon nzType="search"></i></ng-template>
-      </div>
-      <div class="actions">
-        <a class="btn-primary">登录</a>
-        &nbsp;
-        <a class="btn-default">注册</a>
-      </div>
     </div>
-  </header>
+  </div>
+</header>
+<div class="content plr-12" [style.min-height]="contentHeight">
+  <router-outlet></router-outlet>
 </div>
+<footer class="plr-12">
+  <div class="plr-12">
+    <img src="assets/img/B.png" alt="LOGo">
+  </div>
+</footer>

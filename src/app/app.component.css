@@ -39,6 +39,23 @@
   flex-grow: 1;
   max-width: 648px;
   min-width: 100px;
-  padding-left: 12px;
-  padding-right: 12px;
+}
+
+.content {
+  margin-top: 50px;
+}
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 12px 12px 12px;
+  display: flex;
+  flex-flow: row wrap;
+  background-color: #242729;
+  background-image: none;
+  background-position: top left;
+  background-repeat: no-repeat;
+  border-top: 0;
+  background-size: auto;
+  color: #6a737c;
 }
