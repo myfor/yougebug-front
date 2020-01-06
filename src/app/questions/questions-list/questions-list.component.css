@@ -1,3 +1,7 @@
 .questions-list-container {
   display: flex;
 }
+
+.content-list {
+  padding: 24px;
+}

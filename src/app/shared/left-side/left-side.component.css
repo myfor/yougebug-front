@@ -1,13 +1,12 @@
 .left-side-container {
   display: flex;
   flex-direction: column;
-  margin-top: 100px;
-  /* min-width: 150px; */
+  padding-top: 50px;
   height: 100%;
+  border-right: 1px solid #808080;
 }
 
 .side-nav {
-  font-size: 11px !important;
   margin: 14px 0;
 }
 
