@@ -8,13 +8,7 @@
         <img src="assets/img/B.png" alt="LOGO" height="35px">
       </a>
     </div>
-    <div class="search-box h100 mlr-12">
-      <nz-input-group [nzPrefix]="prefixIconSearch">
-        <input class="border" type="search" #searchbox nz-input title="按回车搜索" placeholder="按回车搜索..."
-          (keyup.enter)="search(searchbox.value)">
-      </nz-input-group>
-      <ng-template #prefixIconSearch><i nz-icon nzType="search"></i></ng-template>
-    </div>
+    <app-search-box class="search-box"></app-search-box>
     <div class="actions">
       <div class="of-x-hidd" *ngIf="!isLogged">
         <a nz-button nzType="primary">登录</a>

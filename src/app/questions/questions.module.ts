@@ -5,9 +5,11 @@ import { QuestionsRoutingModule } from './questions-routing.module';
 import { QuestionsListComponent } from './questions-list/questions-list.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 
-
 @NgModule({
-  declarations: [QuestionsListComponent, SearchBarComponent],
+  declarations: [
+    QuestionsListComponent,
+    SearchBarComponent
+  ],
   imports: [
     QuestionsRoutingModule,
     SharedModule

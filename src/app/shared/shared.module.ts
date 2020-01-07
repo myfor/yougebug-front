@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { LeftSideComponent } from './left-side/left-side.component';
+import { SearchBoxComponent } from './search-box/search-box.component';
 
 export const EXPORT_COMPONENT = [
-  LeftSideComponent
+  LeftSideComponent,
+  SearchBoxComponent
 ];
 
 export const EXPORT_MODULE = [
@@ -18,7 +20,7 @@ export const EXPORT_MODULE = [
 
 @NgModule({
   declarations: [
-    ...EXPORT_COMPONENT
+    ...EXPORT_COMPONENT,
   ],
   imports: [
     ...EXPORT_MODULE

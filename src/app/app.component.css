@@ -35,10 +35,8 @@
 }
 
 .search-box {
-  display: flex;
   flex-grow: 1;
-  max-width: 648px;
-  min-width: 100px;
+  max-width: 1000px;
 }
 
 .content {
