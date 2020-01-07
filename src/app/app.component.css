@@ -37,6 +37,7 @@
 .search-box {
   flex-grow: 1;
   max-width: 1000px;
+  margin-right: 24px;
 }
 
 .content {
