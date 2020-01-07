@@ -1,0 +1,7 @@
+<div class="top">
+  <h1 class="title">{{title}}</h1>
+  <a [routerLink]="['/questions/new']" nz-button nzType="primary" nzSize="large">我要提问</a>
+  <p *ngIf="resultCount">
+    <span>{{resultCount}} 条结果</span>
+  </p>
+</div>
