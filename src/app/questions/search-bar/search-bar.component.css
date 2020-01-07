@@ -1,10 +1,14 @@
 .top {
-  display: flex;
   padding-left: 24px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #808080;
 }
 
 .title {
   display: inline;
   flex-grow: 1;
+}
+
+.search-box {
+  display: flex;
 }

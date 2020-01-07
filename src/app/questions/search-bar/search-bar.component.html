@@ -1,7 +1,20 @@
 <div class="top">
-  <h1 class="title">{{title}}</h1>
-  <a [routerLink]="['/questions/new']" nz-button nzType="primary" nzSize="large">我要提问</a>
-  <p *ngIf="resultCount">
-    <span>{{resultCount}} 条结果</span>
-  </p>
+  <div class="flex">
+    <h1 class="title">{{title}}</h1>
+    <a [routerLink]="['/questions/new']" nz-button nzType="primary" nzSize="large">我要提问</a>
+  </div>
+  <div class="mtb-12" *ngIf="searchValue">
+    <small>关于 {{searchValue}} 的搜索</small>
+    <div class="search-box h100 mlr-12 mtb-12">
+      <nz-input-group [nzPrefix]="prefixIconSearch">
+        <input class="border" type="search" #searchbox nz-input title="按回车搜索" placeholder="按回车搜索..."
+          (keyup.enter)="search(searchbox.value)">
+      </nz-input-group>
+      <button class="ml-12" nz-button nzType="primary">搜索</button>
+      <ng-template #prefixIconSearch><i nz-icon nzType="search"></i></ng-template>
+    </div>
+    <div class="mtb-12">
+      <strong>{{resultCount}} 条结果</strong>
+    </div>
+  </div>
 </div>

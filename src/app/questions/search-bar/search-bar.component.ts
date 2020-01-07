@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -13,7 +13,8 @@ export class SearchBarComponent implements OnInit {
   searchValue = '';
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -26,4 +27,10 @@ export class SearchBarComponent implements OnInit {
     });
   }
 
+  search(value: string) {
+    if (!value.trim()) {
+      return;
+    }
+    this.router.navigate(['/questions', { s: value }]);
+  }
 }
