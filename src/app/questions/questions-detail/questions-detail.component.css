@@ -25,3 +25,11 @@
 .info-key {
   color:  #888888;
 }
+
+.post-detail {
+  display: flex;
+}
+
+.vote {
+  padding-right: 24px;
+}
