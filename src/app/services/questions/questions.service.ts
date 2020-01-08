@@ -4,14 +4,15 @@ import { ServicesBase, Result, Paginator } from '../common';
 
 export interface QuestionItem {
   id: number;
-  voted: number;
+  votes: number;
   answers: number;
   title: string;
   description: string;
-  targets: [];
+  targets: string[];
   askTime: string;
   userName: string;
   avatar: string;
+  views: number;
 }
 
 @Injectable({

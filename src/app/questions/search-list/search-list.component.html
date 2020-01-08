@@ -1,5 +1,38 @@
 <div>
   <div class="search-result" *ngFor="let result of searchList">
-    {{result}}
+    <div>
+      <div class="statistics">
+        <div class="statis text-center mb-12">
+          <strong>{{result.votes}}</strong>
+          <p>赞同</p>
+        </div>
+        <div class="statis text-center mb-12">
+          <strong>{{result.answers}}</strong>
+          <p>回答</p>
+        </div>
+      </div>
+      <div class="text-center mr-12">
+        <small>
+          {{result.views}} 次浏览
+        </small>
+      </div>
+    </div>
+    <div class="description">
+      <div class="title">
+        <h3>
+          <a [routerLink]="['/questions', result.id, result.title]">{{result.title}}</a>
+        </h3>
+      </div>
+      <div class="desc">{{result.description}}</div>
+      <div class="actions">
+        <span class="mt-6" *ngFor="let tag of result.targets">
+          <a class="post-tag" [routerLink]="['/targets', tag]">{{tag}}</a>
+          &nbsp;
+        </span>
+        <div class="user">
+          user
+        </div>
+      </div>
+    </div>
   </div>
 </div>

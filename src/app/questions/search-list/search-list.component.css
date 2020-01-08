@@ -1,4 +1,47 @@
 .search-result {
-    padding: 12px;
-    border-bottom: 1px solid #c3c3c3;
+  display: flex;
+  padding: 12px;
+  border-bottom: 1px solid #c3c3c3;
+}
+
+.statistics {
+  margin: 0 24px 0 12px;
+  width: 60px;
+}
+
+.statis {
+  padding: 7px 0 5px;
+  border-radius: 3px;
+}
+
+.search-result .statistics * {
+  color: #6a737c;
+}
+
+.statistics strong {
+  font-size: 1.3rem;
+}
+
+.search-result>.description {
+  flex-grow: 1;
+}
+
+.description>.title {
+  padding: 8px 0 7px;
+}
+
+.description>.desc {
+  font-size: .8rem;
+  line-height: 1.3rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.actions>.user {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row-reverse;
 }
