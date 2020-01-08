@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Page404Component } from './pages/page404.component';
 
-const routes: Routes = [
+const ROUTES: Routes = [
   {
     path: 'questions',
     loadChildren: () => import('./questions/questions.module').then(mod => mod.QuestionsModule),
@@ -14,7 +14,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(ROUTES)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

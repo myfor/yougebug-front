@@ -1,53 +1,52 @@
-<div>
-  <div class="search-result" *ngFor="let result of searchList">
-    <div>
-      <div class="statistics">
-        <div class="statis text-center mb-12">
-          <strong>{{result.votes}}</strong>
-          <p>赞同</p>
-        </div>
-        <div class="statis text-center mb-12">
-          <strong>{{result.answers}}</strong>
-          <p>回答</p>
-        </div>
+<app-search-bar></app-search-bar>
+<div class="search-result" *ngFor="let result of searchList">
+  <div>
+    <div class="statistics">
+      <div class="statis text-center mb-12">
+        <strong>{{result.votes}}</strong>
+        <p>赞同</p>
       </div>
-      <div class="text-center mr-12">
-        <small>
-          {{result.views}} 次浏览
-        </small>
+      <div class="statis text-center mb-12">
+        <strong>{{result.answers}}</strong>
+        <p>回答</p>
       </div>
     </div>
-    <div class="description">
-      <div class="title">
-        <h3>
-          <a [routerLink]="['/questions', result.id, result.title]">{{result.title}}</a>
-        </h3>
-      </div>
-      <div class="desc">{{result.description}}</div>
-      <div class="actions">
-        <span class="mt-6" *ngFor="let tag of result.targets">
-          <a class="post-tag" [routerLink]="['/targets', tag]">{{tag}}</a>
-          &nbsp;
-        </span>
-        <div class="user">
-          <div>
-            <span class="date-time">2020-10-10</span>
-            <div class="user-info">
-              <a [routerLink]="['/users', result.asker.key, result.asker.value]">
-                <img src="assets/img/B.png" alt="头像" width="32px" height="32px">
-              </a>
-              &nbsp;
-              <div>
-                <a [routerLink]="['/users', result.asker.key, result.asker.value]">{{result.asker.value}}</a>
-                <div>--</div>
-              </div>
+    <div class="text-center mr-12">
+      <small>
+        {{result.views}} 次浏览
+      </small>
+    </div>
+  </div>
+  <div class="description">
+    <div class="title">
+      <h3>
+        <a [routerLink]="[result.id, result.title]">{{result.title}}</a>
+      </h3>
+    </div>
+    <div class="desc">{{result.description}}</div>
+    <div class="actions">
+      <span class="mt-6" *ngFor="let tag of result.targets">
+        <a class="post-tag" [routerLink]="['/targets', tag]">{{tag}}</a>
+        &nbsp;
+      </span>
+      <div class="user">
+        <div>
+          <span class="date-time">2020-10-10</span>
+          <div class="user-info">
+            <a [routerLink]="['/users', result.asker.key, result.asker.value]">
+              <img src="assets/img/B.png" alt="头像" width="32px" height="32px">
+            </a>
+            &nbsp;
+            <div>
+              <a [routerLink]="['/users', result.asker.key, result.asker.value]">{{result.asker.value}}</a>
+              <div>--</div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="pagcination mtb-12">
-    <nz-pagination [nzPageSize]="20" [nzTotal]="totalSize" (nzPageIndexChange)="changeIndex($event)"></nz-pagination>
-  </div>
+</div>
+<div class="pagcination mtb-12">
+  <nz-pagination [nzPageSize]="20" [nzTotal]="totalSize" (nzPageIndexChange)="changeIndex($event)"></nz-pagination>
 </div>

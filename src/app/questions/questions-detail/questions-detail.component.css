@@ -1,0 +1,27 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.title-bar {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  flex-grow: 1;
+}
+
+.info {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c3c3c3
+}
+
+.info * {
+  font-size: .9rem;
+}
+
+.info-key {
+  color:  #888888;
+}
