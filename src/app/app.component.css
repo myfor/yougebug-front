@@ -24,6 +24,7 @@
 .top-bar>.bar {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .bar>.logo {

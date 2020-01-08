@@ -8,6 +8,8 @@ import { QuestionItem } from '../../services/questions/questions.service';
 })
 export class SearchListComponent implements OnInit {
 
+  totalSize = 100;
+
   searchList: QuestionItem[] = [
     {
       id: 1,
@@ -19,7 +21,11 @@ export class SearchListComponent implements OnInit {
       askTime: '2020-15-03',
       userName: '阿凡达',
       avatar: '',
-      views: 11
+      views: 11,
+      asker: {
+        key: 1,
+        value: 'emcentter'
+      }
     },
     {
       id: 2,
@@ -31,7 +37,11 @@ export class SearchListComponent implements OnInit {
       askTime: '2020-15-03',
       userName: '阿凡达',
       avatar: '',
-      views: 11
+      views: 11,
+      asker: {
+        key: 2,
+        value: 'emcentter'
+      }
     }
   ];
   constructor() { }
@@ -39,4 +49,7 @@ export class SearchListComponent implements OnInit {
   ngOnInit() {
   }
 
+  changeIndex(index: number) {
+    console.log(index);
+  }
 }

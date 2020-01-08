@@ -30,9 +30,24 @@
           &nbsp;
         </span>
         <div class="user">
-          user
+          <div>
+            <span class="date-time">2020-10-10</span>
+            <div class="user-info">
+              <a [routerLink]="['/users', result.asker.key, result.asker.value]">
+                <img src="assets/img/B.png" alt="头像" width="32px" height="32px">
+              </a>
+              &nbsp;
+              <div>
+                <a [routerLink]="['/users', result.asker.key, result.asker.value]">{{result.asker.value}}</a>
+                <div>--</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="pagcination mtb-12">
+    <nz-pagination [nzPageSize]="20" [nzTotal]="totalSize" (nzPageIndexChange)="changeIndex($event)"></nz-pagination>
   </div>
 </div>

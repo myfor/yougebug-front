@@ -45,3 +45,21 @@
   display: flex;
   flex-direction: row-reverse;
 }
+
+.user-info {
+  width: 200px;
+  padding: 4px;
+}
+
+.date-time {
+  color: #6a737c;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.pagcination {
+  padding: 24px;
+}

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { KeyValue } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ServicesBase, Result, Paginator } from '../common';
 
@@ -13,6 +14,7 @@ export interface QuestionItem {
   userName: string;
   avatar: string;
   views: number;
+  asker: KeyValue<number, string>;
 }
 
 @Injectable({
