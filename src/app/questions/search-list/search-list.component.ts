@@ -19,12 +19,11 @@ export class SearchListComponent implements OnInit {
       description: '怎么用 GIT怎么用 GIT怎么用 GIT 怎么用 GIT怎么用 GIT怎么用 GIT 怎么用 GIT怎么用 GIT怎么用 GIT 怎么用 GIT怎么用 GIT怎么用 GIT 怎么用 GIT怎么用 GIT怎么用 GIT...',
       targets: ['a-target', 'b-targat'],
       askTime: '2020-15-03',
-      userName: '阿凡达',
-      avatar: '',
       views: 11,
       asker: {
-        key: 1,
-        value: 'emcentter'
+        id: 1,
+        name: 'emcentter',
+        avatar: 'assets/img/B.png'
       }
     },
     {
@@ -35,12 +34,11 @@ export class SearchListComponent implements OnInit {
       description: '怎么用 GIT怎么用 GIT怎么用 GIT...',
       targets: ['a-target', 'b-targat'],
       askTime: '2020-15-03',
-      userName: '阿凡达',
-      avatar: '',
       views: 11,
       asker: {
-        key: 2,
-        value: 'emcentter'
+        id: 1,
+        name: 'emcentter',
+        avatar: 'assets/img/B.png'
       }
     }
   ];

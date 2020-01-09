@@ -5,9 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { LeftSideComponent } from './left-side/left-side.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
+import { TagsComponent } from './tags/tags.component';
+import { UserTagComponent } from './user-tag/user-tag.component';
 
 export const EXPORT_COMPONENT = [
   LeftSideComponent,
+  TagsComponent,
+  UserTagComponent,
   SearchBoxComponent
 ];
 

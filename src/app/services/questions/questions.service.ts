@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { KeyValue } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ServicesBase, Result, Paginator } from '../common';
+import { UserTag } from '../users/user.service';
 
 export interface QuestionItem {
   id: number;
@@ -11,10 +12,19 @@ export interface QuestionItem {
   description: string;
   targets: string[];
   askTime: string;
-  userName: string;
-  avatar: string;
   views: number;
-  asker: KeyValue<number, string>;
+  asker: UserTag;
+}
+
+export interface QuestionDetail {
+  title: string;
+  description: string;
+  tags: string[];
+  votes: number;
+  createDate: string;
+  active: string;
+  viewed: number;
+  user: UserTag;
 }
 
 @Injectable({

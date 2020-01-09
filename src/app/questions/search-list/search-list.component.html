@@ -24,24 +24,12 @@
       </h3>
     </div>
     <div class="desc">{{result.description}}</div>
-    <div class="actions">
-      <span class="mt-6" *ngFor="let tag of result.targets">
-        <a class="post-tag" [routerLink]="['/targets', tag]">{{tag}}</a>
-        &nbsp;
-      </span>
+    <div class="actions mt-6">
+      <app-tags [tags]="result.targets"></app-tags>
       <div class="user">
         <div>
-          <span class="date-time">2020-10-10</span>
-          <div class="user-info">
-            <a [routerLink]="['/users', result.asker.key, result.asker.value]">
-              <img src="assets/img/B.png" alt="头像" width="32px" height="32px">
-            </a>
-            &nbsp;
-            <div>
-              <a [routerLink]="['/users', result.asker.key, result.asker.value]">{{result.asker.value}}</a>
-              <div>--</div>
-            </div>
-          </div>
+          <span class="date-time">提问与: {{result.askTime}}</span>
+          <app-user-tag [userInfo]="result.asker"></app-user-tag>
         </div>
       </div>
     </div>

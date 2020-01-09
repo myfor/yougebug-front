@@ -1,0 +1,12 @@
+<div class="user">
+  <div class="user-info">
+    <a [routerLink]="['/users', userInfo.id, userInfo.name]">
+      <img src="{{userInfo.avatar}}" alt="头像" width="32px" height="32px">
+    </a>
+    &nbsp;
+    <div>
+      <a [routerLink]="['/users', userInfo.id, userInfo.name]">{{userInfo.name}}</a>
+      <div>--</div>
+    </div>
+  </div>
+</div>
