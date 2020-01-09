@@ -1,0 +1,14 @@
+<div class="mt-6">
+  <h2>回答</h2>
+  <div class="list">
+    <nz-pagination [nzPageIndex]="index" [nzPageSize]="20" [nzTotal]="totalSize" [nzSize]="'small'"
+      (nzPageIndexChange)="changeIndex($event)"></nz-pagination>
+
+    <div class="answer-item">
+      单个回答
+    </div>
+
+    <nz-pagination [nzPageIndex]="index" [nzPageSize]="20" [nzTotal]="totalSize" [nzSize]="'small'"
+      (nzPageIndexChange)="changeIndex($event)"></nz-pagination>
+  </div>
+</div>

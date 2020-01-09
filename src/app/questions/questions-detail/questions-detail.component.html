@@ -17,12 +17,13 @@
       <h2 class="number">{{detail.votes}}</h2>
       <div class="down"></div>
     </div>
-    <div class="description">
+    <div class="w100">
       {{detail.description}}
-      <div class="mt-6">
+      <div class="sub mt-6">
         <app-tags [tags]="detail.tags"></app-tags>
+        <app-user-tag class="user-tag" [userInfo]="detail.user"></app-user-tag>
       </div>
-      <app-user-tag [userInfo]="detail.user"></app-user-tag>
     </div>
   </div>
+  <app-question-answers></app-question-answers>
 </div>

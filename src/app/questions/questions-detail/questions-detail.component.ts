@@ -12,7 +12,7 @@ export class QuestionsDetailComponent implements OnInit {
   id = 0;
   detail: QuestionDetail = {
     title: '标题',
-    description: '随便什么逗号',
+    description: '随便什么逗号随便什么逗号随便什么逗号随便什么逗号随便什么逗号随便什么逗号随便什么逗号',
     tags: ['a-target', 'b-target'],
     votes: 12,
     createDate: '2020',

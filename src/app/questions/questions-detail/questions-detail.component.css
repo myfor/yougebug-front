@@ -15,7 +15,7 @@
 
 .info {
   padding-bottom: 12px;
-  border-bottom: 1px solid #c3c3c3
+  border-bottom: 1px solid #c3c3c3;
 }
 
 .info * {
@@ -58,4 +58,12 @@
   border-color: #888888 transparent transparent transparent;
   margin: auto;
   cursor: pointer;
+}
+
+.sub {
+  display: flex;
+}
+
+.user-tag {
+  flex-grow: 1;
 }
