@@ -30,36 +30,6 @@
   display: flex;
 }
 
-.vote {
-  padding-right: 24px;
-  text-align: center;
-}
-
-.vote>.up {
-  width: 0;
-  height: 0;
-  border-width: 20px;
-  border-style: solid;
-  border-color: transparent transparent #888888 transparent;
-  margin: auto;
-  cursor: pointer;
-}
-
-.vote>.number {
-  color: #888888;
-  margin: 12px 0;
-}
-
-.vote>.down {
-  width: 0;
-  height: 0;
-  border-width: 20px;
-  border-style: solid;
-  border-color: #888888 transparent transparent transparent;
-  margin: auto;
-  cursor: pointer;
-}
-
 .sub {
   display: flex;
 }

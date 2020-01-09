@@ -7,12 +7,14 @@ import { LeftSideComponent } from './left-side/left-side.component';
 import { SearchBoxComponent } from './search-box/search-box.component';
 import { TagsComponent } from './tags/tags.component';
 import { UserTagComponent } from './user-tag/user-tag.component';
+import { VoteComponent } from './vote/vote.component';
 
 export const EXPORT_COMPONENT = [
   LeftSideComponent,
   TagsComponent,
   UserTagComponent,
-  SearchBoxComponent
+  SearchBoxComponent,
+  VoteComponent
 ];
 
 export const EXPORT_MODULE = [
@@ -24,7 +26,7 @@ export const EXPORT_MODULE = [
 
 @NgModule({
   declarations: [
-    ...EXPORT_COMPONENT,
+    ...EXPORT_COMPONENT
   ],
   imports: [
     ...EXPORT_MODULE

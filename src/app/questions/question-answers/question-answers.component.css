@@ -5,6 +5,6 @@
 
 .answer-item {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 24px 0;
 }

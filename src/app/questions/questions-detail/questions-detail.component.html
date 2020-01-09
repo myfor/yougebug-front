@@ -12,11 +12,7 @@
   </div>
   <hr>
   <div class="post-detail">
-    <div class="vote">
-      <div class="up"></div>
-      <h2 class="number">{{detail.votes}}</h2>
-      <div class="down"></div>
-    </div>
+    <app-vote [votes]="detail.votes"></app-vote>
     <div class="w100">
       {{detail.description}}
       <div class="sub mt-6">
