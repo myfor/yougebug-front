@@ -22,7 +22,14 @@ export class QuestionsDetailComponent implements OnInit {
       id: 1,
       name: 'dededad',
       avatar: 'assets/img/B.png'
-    }
+    },
+    answers: [
+      {
+        id: 1,
+        votes: 10,
+        content: '这是一个回答'
+      }
+    ]
   };
 
   constructor(

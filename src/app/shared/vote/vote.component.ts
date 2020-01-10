@@ -14,6 +14,9 @@ import { Component, OnInit, Input } from '@angular/core';
 export class VoteComponent implements OnInit {
 
   @Input() id = 0;
+  /**
+   * 是提问还是回答
+   */
   @Input() type = 0;
   @Input() votes = 0;
   constructor() { }

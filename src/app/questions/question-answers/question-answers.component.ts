@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { QuestionAnswerItem } from '../../services/questions/questions.service';
 
 @Component({
   selector: 'app-question-answers',
@@ -9,12 +10,14 @@ export class QuestionAnswersComponent implements OnInit {
 
   index = 1;
   totalSize = 100;
+
+  @Input() answers: QuestionAnswerItem[] = [];
   constructor() { }
 
   ngOnInit() {
   }
 
   changeIndex(index: number) {
-
+    this.index = index;
   }
 }

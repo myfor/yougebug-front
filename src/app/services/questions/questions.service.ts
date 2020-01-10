@@ -25,6 +25,13 @@ export interface QuestionDetail {
   active: string;
   viewed: number;
   user: UserTag;
+  answers: QuestionAnswerItem[];
+}
+
+export interface QuestionAnswerItem {
+  id: number;
+  votes: number;
+  content: string;
 }
 
 @Injectable({
