@@ -1,7 +1,7 @@
 <div class="top">
   <div class="flex">
     <h1 class="title">{{title}}</h1>
-    <a [routerLink]="['/questions/new']" nz-button nzType="primary" nzSize="large">我要提问</a>
+    <a [routerLink]="['/ask']" nz-button nzType="primary" nzSize="large">我要提问</a>
   </div>
   <div class="mtb-12" *ngIf="searchValue">
     <small>关于 {{searchValue}} 的搜索</small>

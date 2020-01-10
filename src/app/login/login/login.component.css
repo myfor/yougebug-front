@@ -1,0 +1,18 @@
+.page {
+  height: 100%;
+  margin-top: 250px;
+}
+
+.login-logo {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.login {
+  max-width: 400px;
+  margin: auto;
+  padding: 24px 24px 0px 24px;
+  border: 1px solid #808080;
+  border-radius: 5px;
+}

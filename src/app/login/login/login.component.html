@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="login-logo">
+    <img src="assets/img/有个bug.png" alt="LOGO">
+  </div>
+  <form class="login" nz-form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+    <nz-form-item>
+      <nz-form-control nzErrorTip="请输入邮箱">
+        <nz-input-group nzPrefixIcon="mail">
+          <input type="text" nz-input formControlName="email" placeholder="邮箱" nzSize="large" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control nzErrorTip="请输入密码，密码必须大于等于6位">
+        <nz-input-group nzPrefixIcon="lock">
+          <input type="password" nz-input formControlName="password" placeholder="密码" nzSize="large" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button [nzType]="'primary'" nzBlock>登录</button>
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+</div>

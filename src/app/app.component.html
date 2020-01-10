@@ -11,9 +11,9 @@
     <app-search-box class="search-box"></app-search-box>
     <div class="actions">
       <div class="of-x-hidd" *ngIf="!isLogged">
-        <a nz-button nzType="primary">登录</a>
+        <a routerLink="/login" nz-button nzType="primary">登录</a>
         &nbsp;
-        <a nz-button nzType="default">注册</a>
+        <a routerLink="/login/register" nz-button nzType="default">注册</a>
       </div>
       <div class="of-x-hidd" *ngIf="isLogged">
         <a href="javascript:;">

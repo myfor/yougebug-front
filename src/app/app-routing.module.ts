@@ -8,6 +8,14 @@ const ROUTES: Routes = [
     loadChildren: () => import('./questions/questions.module').then(mod => mod.QuestionsModule),
     data: { preload: true }
   },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then(mod => mod.LoginModule)
+  },
+  {
+    path: 'ask',
+    loadChildren: () => import('./ask/ask.module').then(mod => mod.AskModule)
+  },
   { path: '', redirectTo: 'questions', pathMatch: 'full' },
   { path: '404', component: Page404Component, pathMatch: 'full' },
   { path: '**', redirectTo: '404' }
