@@ -1,16 +1,47 @@
 <div class="container">
   <div class="w100">
-    <div class="ask ask-title" nz-row>
-      <div nz-col [nzXs]="{ offset: 0 }" [nzMd]="{ offset: 4 }">
+    <div class="ask" nz-row>
+      <div nz-col [nzXs]="{ offset: 0 }" [nzSm]="{ offset: 1 }" [nzMd]="{ offset: 3 }">
         <h1>提问</h1>
       </div>
     </div>
     <div class="ask" nz-row [nzGutter]="16">
-      <div class="ask-box" nz-col [nzXs]="24" [nzMd]="{ span: 12, offset: 4 }">
-        提问框
+      <div class="ask-box" nz-col [nzXs]="24" [nzSm]="{ span: 22, offset: 1 }" [nzMd]="{ span: 14, offset: 3 }">
+        <form nz-form [formGroup]="askForm" (ngSubmit)="submitPost()">
+          <nz-form-item>
+            <nz-form-control nzErrorTip="请输入标题">
+              <h3><strong>标题</strong>
+                <small>简明扼要得说出问题</small>
+              </h3>
+              <input type="text" nz-input formControlName="title" nzSize="large" placeholder="标题" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="请输入详细的描述">
+              <h3><strong>描述 </strong>
+                <small> 支持 markdown 语法</small>
+              </h3>
+              <textarea nz-input placeholder="请输入详细的描述" formControlName="description"
+                [nzAutosize]="{ minRows: 8 }"></textarea>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="请输入标题">
+              <h3><strong>标签</strong>
+                <small>给这个问题添加有利于分类的标签</small>
+              </h3>
+              <input type="text" nz-input formControlName="tags" nzSize="large" placeholder="标签" />
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="请输入标题">
+              <button nz-button nzType="primary">提交</button>
+            </nz-form-control>
+          </nz-form-item>
+        </form>
       </div>
-      <div nz-col [nzXs]="0" [nzMd]="4">
-        提示
+      <div nz-col [nzXs]="0" [nzSm]="0" [nzMd]="4">
+        该如何提问
       </div>
     </div>
   </div>

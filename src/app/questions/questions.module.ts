@@ -7,6 +7,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { SearchListComponent } from './search-list/search-list.component';
 import { QuestionsDetailComponent } from './questions-detail/questions-detail.component';
 import { QuestionAnswersComponent } from './question-answers/question-answers.component';
+import { YourAnswerComponent } from './your-answer/your-answer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { QuestionAnswersComponent } from './question-answers/question-answers.co
     SearchBarComponent,
     SearchListComponent,
     QuestionsDetailComponent,
-    QuestionAnswersComponent
+    QuestionAnswersComponent,
+    YourAnswerComponent
   ],
   imports: [
     QuestionsRoutingModule,

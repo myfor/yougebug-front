@@ -1,0 +1,12 @@
+<form nz-form [formGroup]="answerForm" (ngSubmit)="answerSubmit()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="请输入答案">
+      <textarea nz-input formControlName="answer" placeholder="写下你的答案" [nzAutosize]="{ minRows: 8 }"></textarea>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="请输入答案">
+        <button nz-button nzType="primary">提交</button>
+    </nz-form-control>
+  </nz-form-item>
+</form>
