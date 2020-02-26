@@ -64,7 +64,19 @@ export class UserService {
     return this.http.patch<Result>(url, loginInfo)
       .pipe(
         debounceTime(500),
-        retry(1)
+        retry(1),
+        catchError(this.baseService.handleError)
       );
   }
+  // /**
+  //  * 登出
+  //  */
+  // logout() {
+  //   const url = 'client/api/logout';
+  //   return this.http.patch<Result>(url, '')
+  //   .pipe(
+  //     debounceTime(500),
+  //     catchError(this.baseService.handleError)
+  //   );
+  // }
 }

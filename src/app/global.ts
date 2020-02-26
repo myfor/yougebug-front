@@ -33,6 +33,12 @@ export class Global {
         localStorage.setItem(CURRENT_USER_STORAGE_KEY, JSON.stringify(login));
     }
     /**
+     * 清除当前登录用户
+     */
+    static clearCurrentUser() {
+        localStorage.removeItem(CURRENT_USER_STORAGE_KEY);
+    }
+    /**
      * 设置 title
      * @param title title
      */

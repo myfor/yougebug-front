@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService, LoginInfo } from '../../services/users/user.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { Global } from '../../global';
 
 @Component({
   selector: 'app-login',
@@ -10,10 +13,13 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  isLogging = false;
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private userService: UserService,
+    private message: NzMessageService
   ) { }
 
   ngOnInit() {
@@ -24,6 +30,8 @@ export class LoginComponent implements OnInit {
   }
 
   loginSubmit() {
+    this.isLogging = true;
+
     // tslint:disable-next-line: forin
     for (const i in this.loginForm.controls) {
       this.loginForm.controls[i].markAsDirty();
@@ -33,6 +41,20 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.router.navigate(['/']);
+    const loginInfo: LoginInfo = {
+      account: this.loginForm.get('email').value,
+      password: this.loginForm.get('password').value
+    };
+
+    this.userService.login(loginInfo).subscribe((resp) => {
+      if (resp.isFault) {
+        this.message.create('error', resp.message);
+        this.isLogging = false;
+        return;
+      }
+      Global.setCurrentUser(resp.data);
+      location.href = '/';
+    });
+
   }
 }

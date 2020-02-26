@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Startup } from './startup';
 import { Global } from './global';
 import { Router } from '@angular/router';
+import { UserService } from './services/users/user.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ export class AppComponent implements OnInit {
   contentHeight = window.innerHeight + 'px';
 
   constructor(
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
@@ -31,5 +33,12 @@ export class AppComponent implements OnInit {
       return;
     }
     this.router.navigate(['/questions', { s: value }]);
+  }
+
+  logout() {
+    // this.userService.logout().subscribe(() => {
+    Global.clearCurrentUser();
+    location.reload();
+    // });
   }
 }
