@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   isLogged = Global.isLogged();
+  avatar = '';
   contentHeight = window.innerHeight + 'px';
 
   constructor(
@@ -19,6 +20,10 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     new Startup().run();
+    if (this.isLogged) {
+      const info = Global.getCurrentUser();
+      this.avatar = info.avatar;
+    }
   }
 
   search(value: string) {

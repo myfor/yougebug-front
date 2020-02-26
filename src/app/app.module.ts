@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HTTP_INTERCEPTOR_PROVIDERS } from './interceptors/barrel';
+
 import { SharedModule } from './shared/shared.module';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -26,7 +28,9 @@ registerLocaleData(zh);
     NoopAnimationsModule,
     SharedModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+  providers: [
+    { provide: NZ_I18N, useValue: zh_CN },
+    HTTP_INTERCEPTOR_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

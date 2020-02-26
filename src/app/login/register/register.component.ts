@@ -1,43 +1,56 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { UserService, LoginInfo } from '../../services/users/user.service';
+import { Global } from '../../global';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
-  registerForm: FormGroup;
+  loginForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private userService: UserService,
+    private message: NzMessageService
   ) { }
 
   ngOnInit() {
-    this.registerForm = this.fb.group({
+    this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      confirm: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  registerSubmit() {
+  loginSubmit() {
     // tslint:disable-next-line: forin
-    for (const i in this.registerForm.controls) {
-      this.registerForm.controls[i].markAsDirty();
-      this.registerForm.controls[i].updateValueAndValidity();
+    for (const i in this.loginForm.controls) {
+      this.loginForm.controls[i].markAsDirty();
+      this.loginForm.controls[i].updateValueAndValidity();
     }
-    if (this.registerForm.invalid) {
-      return;
-    }
-    if (this.registerForm.get('password').value !== this.registerForm.get('confirm').value) {
-      alert('两次密码不一致，请重新确认');
+    if (this.loginForm.invalid) {
       return;
     }
 
-    this.router.navigate(['/']);
+    const loginInfo: LoginInfo = {
+      account: this.loginForm.get('email').value,
+      password: this.loginForm.get('password').value
+    };
+
+    this.userService.login(loginInfo)
+    .subscribe((resp) => {
+      if (resp.isFault) {
+        this.message.create('error', resp.message);
+        return;
+      }
+      Global.setCurrentUser(resp.data);
+      this.router.navigate(['/']);
+    });
   }
 }

@@ -1,3 +1,7 @@
+import { LoginedInfo } from './services/users/user.service';
+
+const CURRENT_USER_STORAGE_KEY = '_103te0ad1ne9kjho9e_';
+
 /**
  * 全局
  */
@@ -6,7 +10,27 @@ export class Global {
      * 是否已登录
      */
     static isLogged(): boolean {
+        if (localStorage.getItem(CURRENT_USER_STORAGE_KEY)) {
+            return true;
+        }
         return false;
+    }
+    /**
+     * 获取当前登录人的信息
+     */
+    static getCurrentUser(): LoginedInfo {
+        if (!this.isLogged()) {
+            return null;
+        }
+        const value = localStorage.getItem(CURRENT_USER_STORAGE_KEY);
+        const info = JSON.parse(value) as LoginedInfo;
+        return info;
+    }
+    /**
+     * 登录后设置当前登录人的信息
+     */
+    static setCurrentUser(login: LoginedInfo) {
+        localStorage.setItem(CURRENT_USER_STORAGE_KEY, JSON.stringify(login));
     }
     /**
      * 设置 title
