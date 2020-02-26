@@ -12,7 +12,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1050;
+  z-index: 10;
   padding: 7px 0;
   background-color: #fafafb;
   transition: box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
