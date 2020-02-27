@@ -34,6 +34,7 @@ export interface Paginator<T = any> {
     providedIn: 'root'
 })
 export class ServicesBase {
+
     // handleError(error: HttpErrorResponse) {
     //     if (error.error instanceof ErrorEvent) {
     //         // A client-side or network error occurred. Handle it accordingly.
@@ -55,13 +56,20 @@ export class ServicesBase {
     //     return of(result);
     // }
     handleError(error: HttpErrorResponse) {
-        console.error(`backend returned code ${error.status}`);
-        console.error(`error: ${error.error}`);
         const result: Result = {
           message: '请求失败, 稍后重试',
           data: FAULT,
           isFault: true
         };
+        switch (error.status) {
+            case 401: {
+                result.message = '请先登录';
+                return of(result);
+            }
+            default: break;
+        }
+        console.error(`backend returned code ${error.status}`);
+        console.error(`error: ${error.error}`);
         return of(result);
       }
 }

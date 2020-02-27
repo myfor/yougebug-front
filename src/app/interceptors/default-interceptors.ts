@@ -4,11 +4,12 @@ import {
 } from '@angular/common/http';
 import { Observable, throwError, of } from 'rxjs';
 import { catchError, mergeMap } from 'rxjs/operators';
-
 import { FAULT } from '../services/common';
 
 @Injectable()
 export class DefaultInterceptor implements HttpInterceptor {
+
+    constructor() {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req)
@@ -45,7 +46,7 @@ export class DefaultInterceptor implements HttpInterceptor {
                 }),
                 catchError((err: HttpErrorResponse) => {
                     switch (err.status) {
-                        case 401: break;
+                        // case 401: break;
                         default: return throwError(err);
                     }
                 })

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Redirect } from '../../shared/redirect-to/redirect';
 
 @Component({
   selector: 'app-questions-list',
@@ -9,13 +10,13 @@ import { ActivatedRoute } from '@angular/router';
 export class QuestionsListComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute
+    private redirect: Redirect,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.route.paramMap.subscribe((map) => {
-
-    });
+    this.redirect.redirectTo();
   }
 
 }

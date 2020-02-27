@@ -3,6 +3,8 @@ import { KeyValue } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { ServicesBase, Result, Paginator } from '../common';
 import { UserTag } from '../users/user.service';
+import { Observable } from 'rxjs';
+import { debounceTime, catchError, retry } from 'rxjs/operators';
 
 export interface QuestionItem {
   id: number;
@@ -34,6 +36,12 @@ export interface QuestionAnswerItem {
   content: string;
 }
 
+export interface AskInfo {
+  title: string;
+  description: string;
+  tags: string[];
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,4 +51,14 @@ export class QuestionsService {
     private serviceBase: ServicesBase,
     private http: HttpClient
   ) { }
+
+  ask(askInfo: AskInfo): Observable<Result> {
+    const url = 'client/api/questions';
+
+    return this.http.post<Result>(url, askInfo)
+    .pipe(
+      debounceTime(500),
+      catchError(this.serviceBase.handleError)
+    );
+  }
 }
